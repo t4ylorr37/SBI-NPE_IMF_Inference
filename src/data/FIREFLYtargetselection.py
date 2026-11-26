@@ -54,5 +54,5 @@ print(final_sample.sum())
 sample_mangaid = gal_info["MANGAID"]
 sample_plateifu = gal_info["PLATEIFU"]
 
-out_folder = EMPIRICAL_DATA / "MaNGA_targetsample_1.txt"
+out_folder = "/content/drive/MyDrive/SBI-NPE_IMF_Inference/Empirical data/MaNGA_targetsample_1.txt"
 np.savetxt(out_folder, np.column_stack(sample_mangaid, sample_plateifu), fmt="%s")
