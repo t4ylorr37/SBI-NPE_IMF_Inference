@@ -3,7 +3,7 @@ import numpy as np
 from astropy.io import fits
 from pathlib import Path
 
-hdul = astropy.io.fits.open("/Users/taylo/Downloads/manga-firefly-globalprop-v3_1_1-miles (1).fits")
+hdul = astropy.io.fits.open("content/drive/MyDrive/SBI-NPE_IMF_Inference/Empirical data/manga-firefly-globalprop-v3_1_1-miles (1).fits")
 
 hdul.info()
 
