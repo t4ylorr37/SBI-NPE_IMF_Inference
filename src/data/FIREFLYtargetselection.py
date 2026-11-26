@@ -51,8 +51,10 @@ good_mass = lower_M | higher_M_capped
 final_sample = good_age & good_metal & good_mass # boolean mask denoting galaxies that are part of the varied sample
 print(final_sample.sum())
 
-sample_mangaid = gal_info["MANGAID"]
-sample_plateifu = gal_info["PLATEIFU"]
+sample_mangaid = gal_info["MANGAID"][final_sample]
+sample_plateifu = gal_info["PLATEIFU"][final_sample]
+print(len(sample_mangaid))
+print(len(sample_plateifu)) # tests to ensure the mask reduced the sample
 
 out_folder = "/content/drive/MyDrive/SBI-NPE_IMF_Inference/Empirical data/MaNGA_targetsample_1.txt"
 np.savetxt(out_folder, np.column_stack([sample_mangaid, sample_plateifu]), fmt="%s")
