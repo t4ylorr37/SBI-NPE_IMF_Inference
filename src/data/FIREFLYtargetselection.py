@@ -49,5 +49,11 @@ good_age = young | old_capped
 good_metal = metal_poor | metal_rich_capped
 good_mass = lower_M | higher_M_capped
 
-final_sample = good_age & good_metal & good_mass
+final_sample = good_age & good_metal & good_mass # boolean mask denoting galaxies that are part of the varied sample
 print(final_sample.sum())
+
+sample_mangaid = gal_info["MANGAID"]
+sample_plateifu = gal_info["PLATEIFU"]
+
+out_folder = EMPIRICAL_DATA / "MaNGA_targetsample_1.txt"
+np.savetxt(out_folder, np.column_stack(sample_mangaid, sample_plateifu), fmt="%s")
